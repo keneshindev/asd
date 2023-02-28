@@ -5,7 +5,7 @@ fi
 pacman -Q openssh &> /dev/null
 if ! [[ "$?" == 0 ]]; then
   echo "openssh is not installed, installing..."
-  pacman -S --confirm openssh &> /dev/null
+  pacman -Sy --confirm openssh
 fi
 mkdir -p /opt/sshkey
 ssh-keygen -f /opt/sshkey/id_rsa -N "" -q
